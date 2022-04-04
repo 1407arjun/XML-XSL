@@ -1,26 +1,37 @@
 <?php
-  include "database.php";
   $name = $_POST['name'];
+  $phone = $_POST['phone'];
   $email = $_POST['email'];
   $password = $_POST['pwd'];
 
-  $sql = "SELECT * FROM `users` WHERE `email` = '$email'";
-  $result = $conn->query($sql);
+  $flag = 0;
+  $xml = new SimpleXMLElement(file_get_contents("assets/xml/users.xml"));
 
-  if ($result->num_rows > 0) {
+  foreach($xml->children() as $user) {
+    if ($user->email == $email) {
+      $flag = 1;
+      break;
+    }
+  }
+
+  if ($flag == 1) {
     echo 0;
   } else {
     if (strlen($password) < 6) {
       echo 2;
     }
-    $sql = "INSERT INTO `users` VALUES('$name', '$email', '$password')";
-    $result = $conn->query($sql);
+    
+    $newuser = $xml->addChild("user", "");
+    $newuser->addChild("email", $email);
+    $newuser->addChild("name", $name);
+    $newuser->addChild("phone", $phone);
+    $newuser->addChild("password", $password);
 
-    if ($result == TRUE) {
+    if ($xml->asXML("assets/xml/users.xml")) {
       setcookie('user', $name, time() + (86400 * 30), "/");
-      header("Location: /IWP2022/index.php");
+      header("Location: /DA5/index.php");
       exit();
-    }else{
+    } else {
       echo 1;
     }
   }

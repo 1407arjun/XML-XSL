@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cars>
+    <car id="1">
+        <name>Ford Mustang</name>
+        <des>Hear the roar of a Mustang as the ground starts to tremble and your legs start to shake. As always, Mustang draws upon its performance roots with features for enhanced handling, high-powered engine options and a classic Mustang design.</des>
+        <image>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr6cDGx33MNBecyI34m9s5Uq1ErDJ6G-DXQA&amp;usqp=CAU%22</image>
+        <rating>5</rating>
+    </car>
+    <car id="2">
+        <name>Mercedes Class-A</name>
+        <des>Become a part of the Star legacy with the bold and stylish all-new A-Class Limousine. Be it formal events or weekend getaways, fit in everywhere in a Star just like you. Blue &amp; Beige interiors. Expression Interior. Fit &amp; healthy features. Intelligent light system.</des>
+        <image>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrYSbR9-DqJnLNaDwsLsgvz9mpjYuNVXz9LQ&amp;usqp=CAU</image>
+        <rating>3</rating>
+    </car>
+    <car id="3">
+        <name>Hyundai Creata</name>
+        <des>Hyundai Creta is a 5 seater SUV with a mileage of 16.8 KMPL depending upon its transmission and fuel type. Its 4 cylinder, 1497 cc, 1.5 MPi can generate 115 PS @ 6300rpm power and 144 Nm @ 4500 rpm torque. It has a fuel tank capacity of 50 Litres L.</des>
+        <image>https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Creta/6775/1584360708758/front-left-side-47.jpg?impolicy=resize&amp;imwidth=480</image>
+        <rating>4</rating>
+    </car>
+    <car id="4">
+        <name>MG Hector</name>
+        <des>The MG Hector has 1 Diesel Engine and 1 Petrol Engine on offer. The Diesel engine is 1956 cc while the Petrol engine is 1451 cc . It is available with Automatic &amp; Manual transmission.Depending upon the variant and fuel type the Hector has a mileage of &amp; Ground clearance of Hector is 192.</des>
+        <image>https://imgd.aeplcdn.com/0x0/n/cw/ec/52565/hector-exterior-right-front-three-quarter-3.jpeg</image>
+        <rating>2</rating>
+    </car>
+    <car id="5">
+        <name>Mercedes Class-C</name>
+        <des>Mercedes-Benz C-Class is a 5 seater Luxury available in a price range of Rs. 50.01 - 70.66 Lakh*. It is available in 3 variants, 2 engine options that are BS6 compliant and a single Automatic transmission.</des>
+        <image>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgM_lu5SIDeJn7Hko8qgNAchAOoP7YBrUz_g&amp;usqp=CAU</image>
+        <rating>3</rating>
+    </car>
+</cars>

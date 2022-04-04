@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users>
+    <user>
+        <email>arjun@gmail.com</email>
+        <name>Arjun</name>
+        <phone>123</phone>
+        <password>123456</password>
+    </user>
+    <user>
+        <email>arjun140702@gmail.com</email>
+        <name>Arjun Sivaraman</name>
+        <phone>+919167936776</phone>
+        <password>newuser</password>
+    </user>
+</users>

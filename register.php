@@ -2,7 +2,7 @@
 
 <?php
     if(isset($_COOKIE['user'])) {
-        header("Location: /IWP2022//index.php");
+        header("Location: /DA5/index.php");
         exit();
     }
 ?>
@@ -20,7 +20,7 @@
 
 <body class="text-center">
     <main class="form-signin">
-        <form action="/IWP2022/newuser.php" method="POST" id="reg">
+        <form action="/DA5/newuser.php" method="POST" id="reg">
           <img class="mb-4" src="assets/logo.png" alt="" height="57">
           <h1 class="h3 mb-3 fw-normal">Register</h1>
       
@@ -29,16 +29,20 @@
             <label for="email">Email address</label>
           </div>
           <div class="form-floating">
-            <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+            <input type="text" class="form-control" id="name" name="name" placeholder="FirstName LastName">
             <label for="name">Name</label>
           </div>
           <div class="form-floating">
-            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" onkeyup="onPwd(this.value)">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="+91XXXXXXXXXX">
+            <label for="phone">Phone Number</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
             <label for="pwd">Password</label>
           </div>
       
           <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
-          <a href="/IWP2022/login.php" class="mt-5 mb-3 text-primary">Login</a>
+          <a href="/DA5/login.php" class="mt-5 mb-3 text-primary">Login</a>
           <p class="mt-5 mb-3 text-muted">&copy; 2022 CarHub</p>
         </form>
       </main>
@@ -51,19 +55,7 @@
               alert("User already exists.")
           }
         };
-        xmlhttp.open("GET", "/IWP2022/check.php?email=" + value, true);
-        xmlhttp.send();
-      }
-
-      function onPwd(value) {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-          if (this.readyState === 4 && this.status == 200) {
-            if (this.response == 1)
-              alert("Password should be greater than or equal to 6 characters.")
-          }
-        };
-        xmlhttp.open("GET", "/IWP2022/check.php?pwd=" + value, true);
+        xmlhttp.open("GET", "/DA5/check.php?email=" + value, true);
         xmlhttp.send();
       }
     </script>

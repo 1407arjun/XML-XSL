@@ -1,10 +1,17 @@
 <?php
-  include "database.php";
   if (isset($_GET['email'])) {
     $email = $_GET['email'];
-    $sql = "SELECT * FROM `users` WHERE `email` = '$email'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0)
+    $flag = 0;
+    $xml = simplexml_load_file("assets/xml/users.xml");
+
+    foreach($xml->children() as $user) {
+      if ($user->email == $email) {
+        $flag = 1;
+        break;
+      }
+    }
+
+    if ($flag == 1)
         echo 0;
     else
         echo 2;

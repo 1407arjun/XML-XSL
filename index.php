@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 
+<?php
+    if(!isset($_COOKIE['user'])) {
+        header("Location: /DA5/login.php");
+        exit();
+    }
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,9 +19,7 @@
 </head>
 
 <?php
-    include "database.php";
-    $sql = "SELECT * FROM cars";
-    $result = $conn->query($sql);
+    $xml = simplexml_load_file("assets/xml/cars.xml")
 ?> 
 
 <body>  
@@ -24,10 +29,10 @@
         <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-semibold">CarHub</h1>
             <p class="lead text-muted">A hub for all cars</p>
-            <p class="lead text-muted">Logged in as <?php echo 'Arjun Sivaraman'; ?></p>
+            <p class="lead text-muted">Welcome, <?php echo $_COOKIE['user']; ?></p>
             <a href="#" class="btn btn-primary my-2">Book a test drive</a>
             <a href="#cars" class="btn btn-secondary my-2">View Catalog</a>
-            <button class="btn btn-danger my-2">Logout</button>
+            <a href="/DA5/logout.php" class="btn btn-danger my-2">Logout</a>
             </form>
             </p>
         </div>
@@ -39,27 +44,24 @@
         <h2 class="fw-bold mb-4" align="center">Featured collection</h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
+            foreach($xml->children() as $car) {
         ?>
             <div class="col">
             <div class="card shadow-sm">
-                <img src=<?php echo $row['image']; ?> class="bd-placeholder-img card-img-top" width="100%" height="225">
+                <img src=<?php echo $car->image; ?> class="bd-placeholder-img card-img-top" width="100%" height="225">
     
                 <div class="card-body">
-                <h5 class="card-title"><?php echo $row['name']; ?></h5>
-                <p class="card-text"><?php echo $row['des']; ?></p>
+                <h5 class="card-title"><?php echo $car->name; ?></h5>
+                <p class="card-text"><?php echo $car->des; ?></p>
                 <div class="d-flex justify-content-between align-items-center">
                     <a href="#" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                    <small class="text-muted">&#11088;<?php echo $row['rating']; ?> stars</small>
+                    <small class="text-muted">&#11088;<?php echo $car->rating; ?> stars</small>
                 </div>
                 </div>
             </div>
             </div>
-            <?php       }
-
+        <?php
             }
-
         ?> 
     </div>
     
@@ -71,7 +73,7 @@
         <a href="#">Back to top</a>
         </p>
         <p class="mb-1">&copy; CarHub - One stop destination for all cars</p>
-        <p class="mb-0">Logged in as <?php echo 'Arjun Sivaraman'; ?></p>
+        <p class="mb-0">Logged in as <?php echo $_COOKIE['user']; ?></p>
     </div>
     </footer>
 </body>

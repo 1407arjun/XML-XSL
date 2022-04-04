@@ -2,7 +2,7 @@
 
 <?php
     if(isset($_COOKIE['user'])) {
-        header("Location: /IWP2022//index.php");
+        header("Location: /DA5/index.php");
         exit();
     }
 ?>
@@ -20,7 +20,7 @@
 
 <body class="text-center">
     <main class="form-signin">
-        <form action="/IWP2022/auth.php" method="POST">
+        <form action="/DA5/auth.php" method="POST">
           <img class="mb-4" src="assets/logo.png" alt="" height="57">
           <h1 class="h3 mb-3 fw-normal">Sign in</h1>
       
@@ -34,7 +34,7 @@
           </div>
       
           <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-          <a href="/IWP2022/register.php" class="mt-5 mb-3 text-primary">Register</a>
+          <a href="/DA5/register.php" class="mt-5 mb-3 text-primary">Register</a>
           <p class="mt-5 mb-3 text-muted">&copy; 2022 CarHub</p>
         </form>
       </main>
