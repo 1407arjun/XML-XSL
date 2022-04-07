@@ -12,4 +12,10 @@
         <phone>+919167936776</phone>
         <password>newuser</password>
     </user>
+    <user>
+        <email>arjun@xyz.com</email>
+        <name>Arjun S</name>
+        <phone>+919898989898</phone>
+        <password>password</password>
+    </user>
 </users>

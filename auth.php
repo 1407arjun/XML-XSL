@@ -7,7 +7,7 @@
   foreach($xml->children() as $user) {
     if ($user->email == $email && $user->password == $password) {
         setcookie('user', $user->name, time() + (86400 * 30), "/");
-        header("Location: /DA5/index.php");
+        header("Location: /DA5/assets/xml/cars.xml");
         exit();
     }
   }

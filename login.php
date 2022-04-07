@@ -2,7 +2,7 @@
 
 <?php
     if(isset($_COOKIE['user'])) {
-        header("Location: /DA5/index.php");
+        header("Location: /DA5/assets/xml/cars.xml");
         exit();
     }
 ?>
